@@ -4,5 +4,15 @@ const Player = (name) => {
     return {sayName}
 }
 
-human = Player('john')
-human.sayName()
+let clicks = 6;
+const boxes = document.querySelectorAll('div');
+
+function textAlternator (box) {
+    if (clicks % 2 == 0) {
+        box.textContent = 'X'; 
+    }else {
+        box.textContent = 'O';
+    }
+}
+
+
