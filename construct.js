@@ -4,16 +4,15 @@ const Player = (name) => {
     return {sayName}
 }
 
-let clicks = 6;
+let clicks = 9;
 const boxes = document.querySelectorAll('div');
-
 
 boxes.forEach((box) => {
     box.addEventListener('click', () => {
         if (clicks % 2 == 0) {
-            box.textContent = 'X'; 
+            box.textContent = 'O'; 
         }else {
-            box.textContent = 'O';
+            box.textContent = 'X';
         }
         clicks -= 1;
     })
