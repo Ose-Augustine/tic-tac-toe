@@ -10,18 +10,40 @@
 </head>
 <body>
   <main class="grid grid-cols-3 ">
-    <section class="left border-2 border-green-500 rounded-md">who</section>
+    <section class=" bg-yellow-500 text-semibold left border-2 border-green-500 rounded-md">
+      <header>
+        <h1 class="mb-4 text-xl font-extrabold">Instructions</h1>
+      </header>
+      <main>
+        <ul class="mb-3">
+          <li>Register players; 1 and 2; to view the game board.</li>
+          <li>If you wish to save your game, click the save button and use a unique game id.</li>
+          <li>To load your previous game, click the continue button and input the game id in the prompt.</li>
+        </ul>
+        <h2 class="mb-3 font-semibold">The Control Panel</h2>
+        <p>Each number on the panel represents a position on the board</p>
+        <p>click a number to populate that position of the board with your choice</p>
+        <p class="mb-2"><span class="font-semibold">Note:</span> Player1 is automatically registered as "X" and Player2 is registered as "O"</p>
+        <section>
+          <button class="p-2 mr-2 hover:text-green-800 hover:font-extrabold rounded-full ring-2 ring-offset-2 ring-offset-black">Restart</button>
+          <button class="p-2 mr-2 hover:text-green-800 hover:font-extrabold rounded-full ring-2 ring-offset-2 ring-offset-black">Continue</button>
+          <button class="p-2 hover:text-green-800 hover:font-extrabold rounded-full ring-2 ring-offset-2 ring-offset-black">Save</button></section>
+      </main>
+      <footer class="mt-56" >
+        <p>All completed games with a winner declared would be erased &copy;babzoWebsites.Inc </p>
+      </footer>
+    </section>
     <section class="border-2 grid grid-rows-3 border-red-500">
       <section class="grid grid-cols-3 row-span-2  gap-1">
-        <div class="p-3 rounded-md  bg-gradient-to-l from-red-400 to-blue-400">hello</div>
-        <div class="p-3 rounded-md  bg-gradient-to-l from-red-400 to-blue-400">hello</div>
-        <div class="p-3 rounded-md  bg-gradient-to-l from-red-400 to-blue-400">hello</div>
-        <div class="p-3 rounded-md  bg-gradient-to-l from-red-400 to-blue-400">hello</div>
-        <div class="p-3 rounded-md  bg-gradient-to-l from-red-400 to-blue-400">hello</div>
-        <div class="p-3 rounded-md  bg-gradient-to-l from-red-400 to-blue-400">hello</div>
-        <div class="p-3 rounded-md  bg-gradient-to-l from-red-400 to-blue-400">hello</div>
-        <div class="p-3 rounded-md  bg-gradient-to-l from-red-400 to-blue-400">hello</div>
-        <div class="p-3 rounded-md  bg-gradient-to-l from-red-400 to-blue-400">hello</div>
+        <div class="p-3 rounded-md  bg-gradient-to-l from-red-400 to-blue-400"></div>
+        <div class="p-3 rounded-md  bg-gradient-to-l from-red-400 to-blue-400"></div>
+        <div class="p-3 rounded-md  bg-gradient-to-l from-red-400 to-blue-400"></div>
+        <div class="p-3 rounded-md  bg-gradient-to-l from-red-400 to-blue-400"></div>
+        <div class="p-3 rounded-md  bg-gradient-to-l from-red-400 to-blue-400"></div>
+        <div class="p-3 rounded-md  bg-gradient-to-l from-red-400 to-blue-400"></div>
+        <div class="p-3 rounded-md  bg-gradient-to-l from-red-400 to-blue-400"></div>
+        <div class="p-3 rounded-md  bg-gradient-to-l from-red-400 to-blue-400"></div>
+        <div class="p-3 rounded-md  bg-gradient-to-l from-red-400 to-blue-400"></div>
       </section>
       <section class="bg-yellow-300">
         <p class="text-black font-semibold">CONTROL PANEL</p>
@@ -38,7 +60,18 @@
         </section>
       </section>
     </section>
-    <section class="border-2 border-yellow-500 right rounded-md">how</section>
+    <section class="border-2 border-yellow-500 right rounded-md">
+      <div class="register-buttons flex justify-between ">
+        <button class="p-2 rounded-full ring-2 ring-offset-2 ring-offset-black font-semibold hover:text-orange-500">register Player2</button>
+        <button class="font-semibold p-2 rounded-full ring-2 ring-offset-2 ring-offset-black hover:text-orange-500 "type="submit">register player1</button>
+      </div>
+      <div class="grid grid-cols-2">
+        <div>col1</div>
+        <div>col2</div>
+      </div>
+      
+
+    </section>
   </main>
   
   
