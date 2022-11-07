@@ -14,11 +14,12 @@ player1.addEventListener('click',(e)=>{
     let uniqueGameId = prompt('Give this game a unique name:');
     let name = prompt('Player1 enter name:');
     let info = Player(name,'X');
-    e.target.style.display = 'none';
+    e.target.style.display = 'none'; //Once player is registered, hide button
 })
-player2.addEventListener('click',()=>{
+player2.addEventListener('click',(e)=>{
     let name = prompt('Player2 enter name:');
     let info = Player(name,'O');
+    e.target.style.display = 'none'; //Once player is registered, hide button
 });
 
 
