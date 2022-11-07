@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./dist/output.css">
-    <script src="construct.js"defer></script>
+    <script src="./js/registry.js"defer></script>
     <title>Tic-tac-toe</title>
 </head>
 <body>
@@ -47,7 +47,7 @@
       </section>
       <section class="bg-yellow-300">
         <p class="text-black font-semibold">CONTROL PANEL</p>
-        <section class="w-full grid  grid-cols-3 gap-1 control-panel">
+        <section class="control-panel w-full grid  grid-cols-3 gap-1 control-panel">
           <div class="p-3 rounded-md text-white bg-gray-800 font-semibold">1</div>
           <div class="p-3 rounded-md text-white bg-gray-800 font-semibold">2</div>
           <div class="p-3 rounded-md text-white bg-gray-800 font-semibold">3</div>
@@ -62,8 +62,8 @@
     </section>
     <section class="border-2 border-yellow-500 right rounded-md">
       <div class="register-buttons flex justify-between ">
-        <button class="p-2 rounded-full ring-2 ring-offset-2 ring-offset-black font-semibold hover:text-orange-500">register Player2</button>
-        <button class="font-semibold p-2 rounded-full ring-2 ring-offset-2 ring-offset-black hover:text-orange-500 "type="submit">register player1</button>
+        <button class="register-player-1 p-2 rounded-full ring-2 ring-offset-2 ring-offset-black font-semibold hover:text-orange-500">register Player1</button>
+        <button class="register-player-2 font-semibold p-2 rounded-full ring-2 ring-offset-2 ring-offset-black hover:text-orange-500 "type="submit">register player2</button>
       </div>
       <div class="grid grid-cols-2">
         <div>col1</div>
