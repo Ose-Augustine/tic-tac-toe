@@ -10,9 +10,6 @@ const eighth = document.querySelector('.eighth');
 const ninth = document.querySelector('.ninth');
 
 let allPanels = document.querySelectorAll('.control-panel')
-//Click controller
-let counter = 1; 
-
 //Controls the game logic 
 //Umpire accepts the markers of the two players
 //and provides the populateBoard function to accept players choice of
@@ -21,12 +18,15 @@ class Umpire{
     constructor(player1, player2){
         this.player1 = player1;
         this.player2 = player2;
+        this.counter = 1; 
+
         this.board = ['','','','','','','','',''];//Remains the same for every instance of the umpire 
     }
     //Alternate marker 
     //X for odd counter
     //O for even counter 
     whosTurn(){
+        let counter = this.counter 
         while(counter <= 9){
             if (counter % 2 != 0) {
                 counter++;
