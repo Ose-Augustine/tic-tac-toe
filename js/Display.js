@@ -15,7 +15,7 @@ let allPanels = document.querySelectorAll('.control-panel')
 //Umpire checks for win and controls the display wizard
 class Umpire{
     constructor(){
-        this.counter = 1; 
+        this.counter = 1; // controls the player's turn
         this.board = ['','','','','','','','',''];//Remains the same for every instance of the umpire 
     }
     //Alternate marker 
@@ -25,9 +25,11 @@ class Umpire{
         let counter = this.counter 
         while(counter <= 9){
             if (counter % 2 != 0) {
+                alert("Player one, make a move");
                 counter++;
                 return 'X';
             }else{
+                alert("Player two, make a move");
                 counter++;
                 return 'O'
             }
@@ -39,15 +41,16 @@ class Umpire{
         position = parseInt(position);
         //Position is the textcontent of the node and serves as the board index 
         //Position is parsed to int 
-        board[position] = this.whosTurn(); //whosTurn is called to alternate marker. 
-        console.log(board); 
+        let  mark = this.whosTurn();//whosTurn is called to alternate marker.
+        board[position] = mark;  
+        return [board, mark]; 
     }    
     displayWizard(mark,position){
-        let nodeClass = toString(position);//position is the textcontent of the clicked control panel node
-        let node = document.querySelector( `.${nodeClass}` );
-        node.textContent = mark ; //mark is either'X' or 'O'
+        let node = document.querySelector(`.c${position}`);
+        node.textContent = mark ; //mark is either'X' or 'O' and is collected as the return of populate board
     }
-    checkForWin(board){
+    checkForWin(){
+        let board = this.board; 
         switch(true){
             //horizontal win 
             case board[0]==board[1] && board[1]==board[2]:
@@ -80,9 +83,18 @@ class Umpire{
                 alert(`No winner found`);
         }
     }
-    
+    gameRunner(){
+        allPanels.forEach((panel) => {
+            panel.addEventListener('click', (e) => {
+                let positionToSend = e.target.textContent;
+                console.log(positionToSend)
+                let receivedMark = this.populateBoard(positionToSend);
+                this.displayWizard(receivedMark,positionToSend);
+                this.checkForWin();
+            })
+         })
+    }
 }
 
- 
 
 //Controller would handle starting the game sequence, create the umpire and pass in the players name and id to the umpire collected from the registry
