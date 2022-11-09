@@ -14,14 +14,12 @@ class Umpire{
     //O for even counter 
     whosTurn(){
         if (this.counter % 2 != 0) {
-            this.counter = this.counter + 1;
+            this.counter++;
             alert("Player one, make a move");
-            console.log (this.counter); 
             return 'X';
         }else{
             this.counter++; 
             alert("Player two, make a move");
-            console.log(this.counter); 
             return 'O'; 
         }
 }
@@ -35,6 +33,8 @@ class Umpire{
         return mark; 
     }    
     displayWizard(mark,position){
+        //Position is the textContent of the clicke node 
+        //on the control panel
         let displayText = mark; 
         let node = document.querySelector(`.c${position}`);
         node.textContent = displayText ; //mark is either'X' or 'O' and is collected as the return of populate board
