@@ -1,9 +1,9 @@
 //Player factory
-const Player = (name,marker) => {
-    const sayName = () => name;
-    const sayMarker = () => marker;
-    return {sayName, sayMarker};
-}
+const registerPlayers = () => {
+    const player1 = listenForPlayer1(); 
+    const player2 = listenForPlayer2();
+    return {player1, player2};
+};
 let clicks = 2; 
 //Access the DOM
 let player1 = document.querySelector('.register-player-1');
@@ -32,10 +32,6 @@ function listenForPlayer2(){
     });
     return info; 
 }
-
-
 if (clicks === 0){
     //run the next code block 
 }
-
-
