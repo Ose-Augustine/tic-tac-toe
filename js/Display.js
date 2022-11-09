@@ -1,18 +1,9 @@
-//Board mappings 
-const first = document.querySelector('.first');
-const second = document.querySelector('.second');
-const third = document.querySelector('.third');
-const fourth = document.querySelector('.fourth');
-const fifth = document.querySelector('.fifth');
-const sixth = document.querySelector('.sixth');
-const seventh = document.querySelector('.seventh');
-const eighth = document.querySelector('.eighth');
-const ninth = document.querySelector('.ninth');
 
 let allPanels = document.querySelectorAll('.control-panel')
 
 //Umpire controls the game board, its population and player's turn
 //Umpire checks for win and controls the display wizard
+let counter = 1 
 class Umpire{
     constructor(){
         this.counter = 1; // controls the player's turn
@@ -22,32 +13,31 @@ class Umpire{
     //X for odd counter
     //O for even counter 
     whosTurn(){
-        let counter = this.counter 
-        while(counter <= 9){
-            if (counter % 2 != 0) {
-                alert("Player one, make a move");
-                counter++;
-                return 'X';
-            }else{
-                alert("Player two, make a move");
-                counter++;
-                return 'O'
-            }
+        if (this.counter % 2 != 0) {
+            this.counter = this.counter + 1;
+            alert("Player one, make a move");
+            console.log (this.counter); 
+            return 'X';
+        }else{
+            this.counter++; 
+            alert("Player two, make a move");
+            console.log(this.counter); 
+            return 'O'; 
         }
-        console.log('counter have finish')  
-    }
+}
     populateBoard(position){
         let board = this.board;
-        position = parseInt(position);
+        let intPosition = parseInt(position);
         //Position is the textcontent of the node and serves as the board index 
         //Position is parsed to int 
-        let  mark = this.whosTurn();//whosTurn is called to alternate marker.
-        board[position] = mark;  
-        return [board, mark]; 
+        let mark = this.whosTurn();//whosTurn is called to alternate marker.
+        board[intPosition] = mark;  
+        return mark; 
     }    
     displayWizard(mark,position){
+        let displayText = mark; 
         let node = document.querySelector(`.c${position}`);
-        node.textContent = mark ; //mark is either'X' or 'O' and is collected as the return of populate board
+        node.textContent = displayText ; //mark is either'X' or 'O' and is collected as the return of populate board
     }
     checkForWin(){
         let board = this.board; 
@@ -87,10 +77,8 @@ class Umpire{
         allPanels.forEach((panel) => {
             panel.addEventListener('click', (e) => {
                 let positionToSend = e.target.textContent;
-                console.log(positionToSend)
                 let receivedMark = this.populateBoard(positionToSend);
                 this.displayWizard(receivedMark,positionToSend);
-                this.checkForWin();
             })
          })
     }
