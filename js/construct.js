@@ -1,4 +1,4 @@
-function Player(name, marker) {
+const Player= (name, marker)=>{
     const sayName = () => name;
     const sayMarker = () => marker;
     return { sayMarker, sayName };
