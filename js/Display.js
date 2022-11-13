@@ -15,11 +15,9 @@ class Umpire{
     whosTurn(){
         if (this.counter % 2 != 0) {
             this.counter++;
-            alert("Player one, make a move");
             return 'X';
         }else{
             this.counter++; 
-            alert("Player two, make a move");
             return 'O'; 
         }
 }
@@ -79,6 +77,7 @@ class Umpire{
                 let positionToSend = e.target.textContent;
                 let receivedMark = this.populateBoard(positionToSend);
                 this.displayWizard(receivedMark,positionToSend);
+                this.checkForWin(); 
             })
          })
     }
