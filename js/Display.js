@@ -37,36 +37,42 @@ class Umpire{
         let node = document.querySelector(`.c${position}`);
         node.textContent = displayText ; //mark is either'X' or 'O' and is collected as the return of populate board
     }
+    compareBoards(a,b){
+        return JSON.stringify(a)===JSON.stringify(b); 
+    }
     checkForWin(){
         let board = this.board; 
+        let controlPanel = document.querySelector('.controller'); 
         let text = '';
         switch(true){
             //horizontal win 
-            case board[0]==board[1] && board[1]==board[2]:
+            case this.compareBoards(board[0]==board[1],board[1]==board[2]):
                 alert('this is switch one')
+                controlPanel.style.visibility = 'hidden';
                 break;
-            case board[3]==board[4] && board[4]==board[5]:
+            case board[[3]==board[4]]==[board[4]==board[5]]:
+;
                 alert ('this is switch two')
                 break; 
             case board[6]==board[7] && board[7]==board[8]:
-                status = true; 
+;
                 break;
             //Vertical win 
             case board[0]==board[3] && board[3]==board[6]:
-                status = true; 
+;
                 break; 
             case board[1]==board[4] && board[4]==board[7]:
-                status = true; 
+;
                 break;
             case board[2]==board[5] && board[5]==board[8]:
-                status = true; 
+;
                 break;
             //diagonal win
             case board[0]==board[4] && board[4]==board[8]:
-                status = true; 
+;
                 break;
             case board[2]==board[4] && board[4]==board[6]:
-                status = true; 
+;
                 break;
             default:
                 alert(`No winner found`);
