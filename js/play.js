@@ -3,6 +3,7 @@
 //Controller would be the only link between umpire and registry
 //and can call on them to function
 //Controller is my brain (lol)! 
+let displayPanel = document.querySelector('.display-box');
 (function Controller(){
     let players = registerPlayers();
     console.log(players);

@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/output.css">
     <title>Document</title>
 </head>
-<body>
+<body class="bg-[url('../img/login-background.jpg')] bg-no-repeat bg-cover border-2 border-yellow-500 " >
+    <h1 class="text-white  pl-96 scale-y-90 text-3xl font-bold" >TIC TAC TOE</h1>
+    <main class=" flex justify-center min-w-max  m-44 p-4 border-2 border-green-500">
+        <form class= " bg-white opacity-80 text-black font-extrabold px-6 py-8 min-w-max border-2 border-red-500"  action="">
+            <div>
+                <label for="name">Name: 
+                    <input class="ml-4 mb-2 border-2 border-black ring-1 ring-inset rounded-full"type="text" placeholder="babzo">
+                </label>
+            </div>
+            <div>
+                <label for="gameId">Game Id:
+                    <input class="border-2 border-black ring-2 ring-inset rounded-full " type="text"placeholder="UniqueId">
+                </label>
+            </div>
+            <div>
+                <label for="Ai"> VsAI
+                    <input type="checkbox" name="vsAI" id="AI"placeholder="gameId">
+                </label>
+            </div>
+        </form>
+    </main>
+    
     
 </body>
 </html>
