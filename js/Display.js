@@ -39,45 +39,54 @@ class Umpire{
     }
     checkForWin(){
         let board = this.board; 
+        let text = '';
         switch(true){
             //horizontal win 
             case board[0]==board[1] && board[1]==board[2]:
-                alert(`The winner is: ${board[0]}`);  
+                alert('this is switch one')
                 break;
             case board[3]==board[4] && board[4]==board[5]:
-                alert(`The winner is: ${board[3]}`);
-                break;
+                alert ('this is switch two')
+                break; 
             case board[6]==board[7] && board[7]==board[8]:
-                alert(`The winner is: ${board[6]}`);
+                status = true; 
                 break;
             //Vertical win 
             case board[0]==board[3] && board[3]==board[6]:
-                alert(`The winner is: ${board[0]}`);
-                break;
+                status = true; 
+                break; 
             case board[1]==board[4] && board[4]==board[7]:
-                alert(`The winner is: ${board[1]}`);
+                status = true; 
                 break;
             case board[2]==board[5] && board[5]==board[8]:
-                alert(`The winner is: ${board[2]}`);
+                status = true; 
                 break;
             //diagonal win
             case board[0]==board[4] && board[4]==board[8]:
-                alert(`The winner is: ${board[0]}`);
+                status = true; 
                 break;
             case board[2]==board[4] && board[4]==board[6]:
-                alert(`The winner is: ${board[2]}`);
+                status = true; 
                 break;
             default:
                 alert(`No winner found`);
         }
+        console.log(status)
     }
     gameRunner(){
+        clicks = 3; 
         allPanels.forEach((panel) => {
             panel.addEventListener('click', (e) => {
+                clicks--; 
                 let positionToSend = e.target.textContent;
                 let receivedMark = this.populateBoard(positionToSend);
                 this.displayWizard(receivedMark,positionToSend);
-                this.checkForWin(); 
+                //Start the checker only if there is  a minimum of
+                //three clicks on the board
+                if (clicks <= 0){
+                    this.checkForWin(); 
+                }
+                
             })
          })
     }
