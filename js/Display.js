@@ -4,6 +4,11 @@ let allPanels = document.querySelectorAll('.control-panel')
 //Umpire controls the game board, its population and player's turn
 //Umpire checks for win and controls the display wizard
 let counter = 1 
+function compareBoards(a,b){
+    let checka = a == true;
+    let checkb = b == true;
+    return checka == checkb 
+}
 class Umpire{
     constructor(){
         this.counter = 1; // controls the player's turn
@@ -37,47 +42,23 @@ class Umpire{
         let node = document.querySelector(`.c${position}`);
         node.textContent = displayText ; //mark is either'X' or 'O' and is collected as the return of populate board
     }
-    compareBoards(a,b){
-        return JSON.stringify(a)===JSON.stringify(b); 
-    }
+  
     checkForWin(){
         let board = this.board; 
+        //horizontal positions
+        let firstRow = [board[0],board[1],board[2]];
+        let secondRow = [board[3],board[4],board[5]];
+        let thirdRow = [board[6],board[7],board[8]];
+        //vertical positions
+        let firstColumn = [board[0],board[3],board[6]]; 
+        let SecondColumn = [board[1],board[4],board[6]];
+        let thirdColumn = [board[2],board[5],board[8]]; 
+        //diagonal positions 
+        let left = [board[0],board[4],board[8]]; 
+        let right = [board[2],board[4],board[6]]; 
         let controlPanel = document.querySelector('.controller'); 
         let text = '';
-        switch(true){
-            //horizontal win 
-            case this.compareBoards(board[0]==board[1],board[1]==board[2]):
-                alert('this is switch one')
-                controlPanel.style.visibility = 'hidden';
-                break;
-            case board[[3]==board[4]]==[board[4]==board[5]]:
-;
-                alert ('this is switch two')
-                break; 
-            case board[6]==board[7] && board[7]==board[8]:
-;
-                break;
-            //Vertical win 
-            case board[0]==board[3] && board[3]==board[6]:
-;
-                break; 
-            case board[1]==board[4] && board[4]==board[7]:
-;
-                break;
-            case board[2]==board[5] && board[5]==board[8]:
-;
-                break;
-            //diagonal win
-            case board[0]==board[4] && board[4]==board[8]:
-;
-                break;
-            case board[2]==board[4] && board[4]==board[6]:
-;
-                break;
-            default:
-                alert(`No winner found`);
-        }
-        console.log(status)
+      
     }
     gameRunner(){
         clicks = 3; 
@@ -87,14 +68,12 @@ class Umpire{
                 let positionToSend = e.target.textContent;
                 let receivedMark = this.populateBoard(positionToSend);
                 this.displayWizard(receivedMark,positionToSend);
-                //Start the checker only if there is  a minimum of
-                //three clicks on the board
                 if (clicks <= 0){
-                    this.checkForWin(); 
+                    this.checkForWin();
                 }
                 
             })
-         })
+        })
     }
 }
 
