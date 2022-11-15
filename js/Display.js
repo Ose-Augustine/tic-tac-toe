@@ -3,12 +3,15 @@ let allPanels = document.querySelectorAll('.control-panel')
 
 //Umpire controls the game board, its population and player's turn
 //Umpire checks for win and controls the display wizard
-let counter = 1 
-function compareBoards(a,b){
-    let checka = a == true;
-    let checkb = b == true;
-    return checka == checkb 
+function allEqual(arr,blanks){
+    let count = arr.filter(x => x === blanks).length;
+    if (count > 1){
+        return false; 
+    }else{
+        return arr.every(val => val === arr[0]);
+    }
 }
+
 class Umpire{
     constructor(){
         this.counter = 1; // controls the player's turn
@@ -58,15 +61,8 @@ class Umpire{
         let right = [board[2],board[4],board[6]]; 
         let controlPanel = document.querySelector('.controller'); 
         let text = '';
-        function allEqual(arr,blanks){
-            let count = arr.filter(x => x === blanks).length;
-            if (count > 1){
-                return false; 
-            }else{
-                return arr.every(val => val === arr[0]);
-        }
-      
     }
+        
     gameRunner(){
         clicks = 3; 
         allPanels.forEach((panel) => {
