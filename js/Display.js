@@ -1,17 +1,21 @@
 
 let allPanels = document.querySelectorAll('.control-panel')
 
-//Umpire controls the game board, its population and player's turn
-//Umpire checks for win and controls the display wizard
-function allEqual(arr,blanks){
+//returns bool 
+function allEqual(arr){
+    let blanks = ''; 
+    //returns how many times blanks appear in arr
     let count = arr.filter(x => x === blanks).length;
     if (count > 1){
         return false; 
     }else{
+        //check if all elements in array are the same
         return arr.every(val => val === arr[0]);
     }
 }
-
+let controlPanel = document.querySelector('.controller'); 
+//Umpire controls the game board, its population and player's turn
+//Umpire checks for win and controls the display wizard
 class Umpire{
     constructor(){
         this.counter = 1; // controls the player's turn
@@ -59,8 +63,6 @@ class Umpire{
         //diagonal positions 
         let left = [board[0],board[4],board[8]]; 
         let right = [board[2],board[4],board[6]]; 
-        let controlPanel = document.querySelector('.controller'); 
-        let text = '';
     }
         
     gameRunner(){
