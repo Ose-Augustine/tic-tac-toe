@@ -1,5 +1,5 @@
 
-let allPanels = document.querySelectorAll('.control-panel')
+const allPanels = document.querySelectorAll('.control-panel')
 
 //returns bool 
 function allEqual(arr){
@@ -58,11 +58,48 @@ class Umpire{
         let thirdRow = [board[6],board[7],board[8]];
         //vertical positions
         let firstColumn = [board[0],board[3],board[6]]; 
-        let SecondColumn = [board[1],board[4],board[6]];
+        let secondColumn = [board[1],board[4],board[6]];
         let thirdColumn = [board[2],board[5],board[8]]; 
         //diagonal positions 
         let left = [board[0],board[4],board[8]]; 
         let right = [board[2],board[4],board[6]]; 
+        //whatever the final value of x 
+        //would be used to determine the winner
+        let text = '';
+
+        switch (true){
+            case allEqual(firstRow):
+                text = firstRow[0]
+                break ; 
+            case allEqual(secondRow):
+                text = secondRow[0]
+                break ; 
+            case allEqual(thirdRow):
+                text = thirdRow[0]; 
+                break ; 
+            case allEqual(firstColumn):
+                text = firstColumn[0]
+                break; 
+            case allEqual(secondColumn):
+                text = secondColumn[0];
+                break
+            case allEqual(thirdColumn):
+                text = thirdColumn[0]; 
+                break;
+            case allEqual(left):
+                text = left[0];
+                break; 
+            case allEqual(right):
+                text = right[0]; 
+                break; 
+        }
+        if (text == 'X'){
+            console.log('player one wins')
+        }
+        if(text == 'O'){
+            alert('player 2 wins')
+        }
+       
     }
         
     gameRunner(){
@@ -73,10 +110,7 @@ class Umpire{
                 let positionToSend = e.target.textContent;
                 let receivedMark = this.populateBoard(positionToSend);
                 this.displayWizard(receivedMark,positionToSend);
-                if (clicks <= 0){
-                    this.checkForWin();
-                }
-                
+                this.checkForWin();   
             })
         })
     }
