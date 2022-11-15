@@ -58,6 +58,13 @@ class Umpire{
         let right = [board[2],board[4],board[6]]; 
         let controlPanel = document.querySelector('.controller'); 
         let text = '';
+        function allEqual(arr,blanks){
+            let count = arr.filter(x => x === blanks).length;
+            if (count > 1){
+                return false; 
+            }else{
+                return arr.every(val => val === arr[0]);
+        }
       
     }
     gameRunner(){
