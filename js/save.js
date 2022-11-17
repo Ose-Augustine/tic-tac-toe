@@ -38,7 +38,7 @@ class saveAndContinue{
     }
     //X and O are arrays containing the positions of 
     //X and O elements 
-    usePositions(O,X){
+    usePositions(X,O){
         //use element to access the corresponding dom
         //set the text content of that dom to be o
         O.forEach(element => {
