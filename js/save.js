@@ -30,6 +30,7 @@ class saveAndContinue{
     boardMapper(parsedBoard){
         let positionsOfX = [];
         let positionsOfO = []; 
+        //get the positions of x and o on the board 
         for (let i=0; i<parsedBoard.length; i++){
             if (parsedBoard[i]==='X'){
                 positionsOfX.push(i); 
@@ -48,22 +49,18 @@ class saveAndContinue{
         O.forEach(element => {
             const node = document.querySelector(`.c${element}`);
             node.textContent = 'O'; 
+            //remove panels already selected
+            const panel = document.querySelector(`.k${element}`);
+            panel.style.visibility = 'hidden';
         });
         //use element to access the corresponding dom
         //set the text content of that dom to be x
         X.forEach(element => {
             const node = document.querySelector(`.c${element}`);
             node.textContent = 'X'; 
-        })
-        //Remove the panels that their text content match those 
-        //in X or O arrays 
-        const allPanels = document.querySelectorAll('.control-panel'); 
-        allPanels.forEach((panel) => {
-            let content = parseInt(panel.textContent); 
-            console.log(content)
-            if (O.includes(content) || X.includes(content)){
-                panel.style.visibility = 'hidden';
-            }
+            //remove panels already selected 
+            const panel = document.querySelector(`.k${element}`);
+            panel.style.visibility = 'hidden';
         })
     }
     continueSequence(){
