@@ -10,3 +10,13 @@ sendButton.addEventListener('click', ()=>{
     localStorage.setItem('info',saveId);
     saveBlock.style.visibility = 'hidden' ;
 })
+
+function storesBoard(board){ 
+    let stringedBoard = JSON.stringify(board); 
+    localStorage.setItem('stringify',board);
+    return stringedBoard; 
+}
+function retrievesBoard(board){
+    parsedBoard = JSON.parse(localStorage.getItem('stringify'));
+    return parsedBoard;
+}
