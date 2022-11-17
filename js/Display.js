@@ -1,5 +1,6 @@
 
 const allPanels = document.querySelectorAll('.control-panel')
+let winnerDisplay = document.querySelector('.win-text'); 
 
 //returns bool 
 function allEqual(arr){
@@ -94,10 +95,11 @@ class Umpire{
                 break; 
         }
         if (text == 'X'){
+            winnerDisplay.textContent = 'player one wins';
             console.log('player one wins')
         }
         if(text == 'O'){
-            alert('player 2 wins')
+            winnerDisplay.textContent = 'player two wins';
         }
        
     }
