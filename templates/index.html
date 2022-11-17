@@ -14,6 +14,7 @@
   <script src="../js/registry.js"defer></script>
   <script src="../js/Display.js"defer></script>
   <script src="../js/play.js"defer></script>
+  <script src="../js/save.js"defer></script>
   <title>Tic-tac-toe</title>
 </head>
 <body>
@@ -24,12 +25,12 @@
               <span class="hover:text-green-800 hover:font-extrabold material-symbols-outlined border-4 border-green-500">
                 save
               </span>
-              <button class="p-2  hover:text-green-800 hover:font-extrabold rounded-full ring-2 ring-offset-2 ring-offset-black">save</button>
-              <div style="visibility:hidden;">
+              <button id="save"  class="p-2 hover:text-green-800 hover:font-extrabold rounded-full ring-2 ring-offset-2 ring-offset-black">save</button>
+              <div id="save-block" style="visibility:hidden" class="save-block">
                 <label for="Id">ID:
-                  <input class="rounded-md ring-2 ring-offset-1 ring-offset-black" type="text">
+                  <input id="saveId" class="rounded-md ring-2 ring-offset-1 ring-offset-black" type="text">
                 </label>
-                <button class="p-1 rounded-full ring-4 ring-offset-2 ring-offset-black">send</button>
+                <button id="send" class="p-1 rounded-full ring-4 ring-offset-2 ring-offset-black">send</button>
               </div>
             </div>
             <div>
