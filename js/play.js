@@ -7,16 +7,11 @@ sendButton.addEventListener('click',()=>{
     storesBoard(umpire.board); 
 }); 
 continueSend.addEventListener('click',()=>{
+    let count = umpire.counter 
     let continueAgent = new saveAndContinue(); 
-    continueAgent.continueSequence(); }
+    let retrievedGame = continueAgent.continueSequence();//get the current board 
+    umpire.board = retrievedGame;//set the umpire's board to the current board
+    count += 1; //start from the next counter
+}
 )
 umpire.gameRunner(); 
-
-// (function Controller(){
-//     let umpire  = new Umpire();
-//     umpire.gameRunner();
-//     //display the input field
-//     sendButton.addEventListener('click', storesBoard(umpire.board)); 
-  
-//     });
-// })();

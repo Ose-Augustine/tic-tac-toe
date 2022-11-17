@@ -12,6 +12,7 @@ module.exports = {
       keyframes:{
         marquee:{
           '0%':{transform:'translateX(0%)'}, 
+          '50%':{backgroundImage:'radial-gradient(circle, #5c0067 0%, #00d4ff 100%)'} ,
           '100%':{transform:'translateX(-100%)'},
         },
         marquee2:{

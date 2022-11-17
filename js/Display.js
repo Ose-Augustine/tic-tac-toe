@@ -51,8 +51,7 @@ class Umpire{
         node.textContent = displayText ; //mark is either'X' or 'O' and is collected as the return of populate board
     }
   
-    checkForWin(){
-        let board = this.board; 
+    checkForWin(board){
         //horizontal positions
         let firstRow = [board[0],board[1],board[2]];
         let secondRow = [board[3],board[4],board[5]];
@@ -110,7 +109,7 @@ class Umpire{
                 let positionToSend = e.target.textContent;
                 let receivedMark = this.populateBoard(positionToSend);
                 this.displayWizard(receivedMark,positionToSend);
-                this.checkForWin();   
+                this.checkForWin(this.board);   
                 e.target.style.visibility = 'hidden';
             })
         })

@@ -67,8 +67,8 @@ class saveAndContinue{
         continueBlock.style.visibility = 'visible'; 
         const continueId = document.querySelector('#continueId').value;
         let retrievedBoard = this.retrievesBoard(continueId); 
-        console.log(retrievedBoard)
         let boardmap = this.boardMapper(retrievedBoard);
         this.usePositions(boardmap[0],boardmap[1]);
+        return retrievedBoard;
     }
 }
