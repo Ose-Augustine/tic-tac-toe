@@ -18,6 +18,10 @@ function storesBoard(board){
     saveBlock.style.visibility = 'hidden';
 }
 
+function cleanOut(){
+
+}
+
 class saveAndContinue{
     retrievesBoard(gameId){
         let parsedBoard = JSON.parse(localStorage.getItem(gameId));
@@ -55,7 +59,8 @@ class saveAndContinue{
         //in X or O arrays 
         const allPanels = document.querySelectorAll('.control-panel'); 
         allPanels.forEach((panel) => {
-            let content = parseInt(panel.value); 
+            let content = parseInt(panel.textContent); 
+            console.log(content)
             if (O.includes(content) || X.includes(content)){
                 panel.style.visibility = 'hidden';
             }
