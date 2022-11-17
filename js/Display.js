@@ -111,6 +111,7 @@ class Umpire{
                 let receivedMark = this.populateBoard(positionToSend);
                 this.displayWizard(receivedMark,positionToSend);
                 this.checkForWin();   
+                e.target.style.visibility = 'hidden';
             })
         })
     }
