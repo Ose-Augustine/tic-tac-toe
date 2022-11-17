@@ -5,8 +5,6 @@
 //Controller is my brain (lol)! 
 let displayPanel = document.querySelector('.display-box');
 (function Controller(){
-    let players = registerPlayers();
-    console.log(players);
     let umpire  = new Umpire();
     umpire.gameRunner();
 })();

@@ -9,7 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <!--  -->
+  <!-- to add save icon -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,600,0,200" />
   <script src="../js/registry.js"defer></script>
   <script src="../js/Display.js"defer></script>
   <script src="../js/play.js"defer></script>
@@ -17,31 +18,38 @@
 </head>
 <body>
   <main class="grid grid-cols-3 h-screen ">
-    <section class=" bg-yellow-500 text-semibold left border-2 border-green-500 rounded-md">
-      <header>
-        <h1 class="mb-4 text-xl font-extrabold">Instructions</h1>
-      </header>
-      <main>
-        <ul class="mb-3">
-          <li>Register players; 1 and 2; to view the game board.</li>
-          <li>If you wish to save your game, click the save button and use a unique game id.</li>
-          <li>To load your previous game, click the continue button and input the game id in the prompt.</li>
-        </ul>
-        <h2 class="mb-3 font-semibold">The Control Panel</h2>
-        <p>Each number on the panel represents a position on the board</p>
-        <p>click a number to populate that position of the board with your choice</p>
-        <p class="mb-2"><span class="font-semibold">Note:</span> Player1 is automatically registered as "X" and Player2 is registered as "O"</p>
-        <section>
-          <button class="p-2 mr-2 hover:text-green-800 hover:font-extrabold rounded-full ring-2 ring-offset-2 ring-offset-black">Restart</button>
-          <button class="p-2 mr-2 hover:text-green-800 hover:font-extrabold rounded-full ring-2 ring-offset-2 ring-offset-black">Continue</button>
-          <button class="p-2 hover:text-green-800 hover:font-extrabold rounded-full ring-2 ring-offset-2 ring-offset-black">Save</button>
-        </section>
-      </main>
-      <footer class="" >
-        <p>All completed games with a winner declared would be erased &copy;babzoWebsites.Inc </p>
-      </footer>
+    <section class=" bg-gradient-to-r from-yellow-400 to-white text-semibold left  rounded-md">
+          <div class="button-container">
+            <div>
+              <span class="hover:text-green-800 hover:font-extrabold material-symbols-outlined border-4 border-green-500">
+                save
+              </span>
+              <button class="p-2  hover:text-green-800 hover:font-extrabold rounded-full ring-2 ring-offset-2 ring-offset-black">save</button>
+              <div style="visibility:hidden;">
+                <label for="Id">ID:
+                  <input class="rounded-md ring-2 ring-offset-1 ring-offset-black" type="text">
+                </label>
+                <button class="p-1 rounded-full ring-4 ring-offset-2 ring-offset-black">send</button>
+              </div>
+            </div>
+            <div>
+              <span class="hover:text-green-800 hover:font-extrabold material-symbols-outlined">
+                refresh
+              </span>
+              <button class="p-2 mb-6 hover:text-green-800 hover:font-extrabold rounded-full ring-2 ring-offset-2 ring-offset-black">Refresh</button>
+            </div>
+            <div>
+              <span class="hover:text-green-800 hover:font-extrabold material-symbols-outlined">
+                downloading
+              </span>
+              <button class="p-2  hover:text-green-800 hover:font-extrabold rounded-full ring-2 ring-offset-2 ring-offset-black">Continue</button>
+            </div>
+          </div>
+          <div style="font-family:'Press Start 2P'" class="animate-marquee winner-display hidden">
+            <p>Player two wins</p>
+          </div>
     </section>
-    <section class="border-2 grid grid-rows-3 border-red-500">
+    <section class=" grid grid-rows-3 ">
       <section style="font-family:'Press Start 2P'" class="display-box text-3xl overflow-clip grid grid-cols-3 row-span-2  gap-1">
         <div class="p-3 rounded-md  bg-gradient-to-l from-red-400 to-blue-400 c0"></div>
         <div class="p-3 rounded-md  bg-gradient-to-l from-red-400 to-blue-400 c1"></div>
@@ -55,7 +63,7 @@
       </section>
       <section class="bg-yellow-300 controller">
         <p class="text-black font-semibold">CONTROL PANEL</p>
-        <section class="control-panel w-full grid  grid-cols-3 gap-1 control-panel">
+        <section class="control-panel w-full grid  grid-cols-3 gap-1">
           <div class="first p-3 rounded-md text-white bg-gray-800 font-semibold">0</div>
           <div class="second p-3 rounded-md text-white bg-gray-800 font-semibold">1</div>
           <div class="third p-3 rounded-md text-white bg-gray-800 font-semibold">2</div>
@@ -68,23 +76,7 @@
         </section>
       </section>
     </section>
-    <section class="border-2 border-yellow-500 right rounded-md">
-      <div class="register-buttons flex justify-between ">
-        <div>
-          <p> Player 1</p>
-          <button class="register-player-1 p-1 rounded-full ring-2 ring-offset-2 ring-offset-black font-semibold hover:text-orange-500">Sign</button>
-        </div>
-        <div>
-          <p> Player 2</p>
-          <button class="register-player-2 font-semibold p-1 rounded-full ring-2 ring-offset-2 ring-offset-black hover:text-orange-500 "type="submit">Sign</button>
-        </div>
-      </div>
-      <div class="grid grid-cols-2">
-        <div class="col1">col1</div>
-        <div class="col2">col2</div>
-      </div>
-
-
+    <section class="bg-gradient-to-r from-white to-yellow-400 right rounded-md">
     </section>
   </main>
 

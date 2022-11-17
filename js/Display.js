@@ -58,7 +58,7 @@ class Umpire{
         let thirdRow = [board[6],board[7],board[8]];
         //vertical positions
         let firstColumn = [board[0],board[3],board[6]]; 
-        let secondColumn = [board[1],board[4],board[6]];
+        let secondColumn = [board[1],board[4],board[7]];
         let thirdColumn = [board[2],board[5],board[8]]; 
         //diagonal positions 
         let left = [board[0],board[4],board[8]]; 
@@ -103,10 +103,8 @@ class Umpire{
     }
         
     gameRunner(){
-        clicks = 3; 
         allPanels.forEach((panel) => {
             panel.addEventListener('click', (e) => {
-                clicks--; 
                 let positionToSend = e.target.textContent;
                 let receivedMark = this.populateBoard(positionToSend);
                 this.displayWizard(receivedMark,positionToSend);
