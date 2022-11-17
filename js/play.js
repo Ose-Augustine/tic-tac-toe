@@ -1,12 +1,12 @@
 
-const continueBtn = document.querySelector('#continue-btn');
+const continueSend = document.querySelector('#continue-send');
 const sendButton = document.querySelector('#save-send');
 
 let umpire = new Umpire(); 
 sendButton.addEventListener('click',()=>{
     storesBoard(umpire.board); 
 }); 
-continueBtn.addEventListener('click',()=>{
+continueSend.addEventListener('click',()=>{
     let continueAgent = new saveAndContinue(); 
     continueAgent.continueSequence(); }
 )

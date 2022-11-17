@@ -1,10 +1,15 @@
 const saveButton = document.querySelector('#save');
 const saveBlock = document.querySelector('#save-block'); 
 const continueBlock = document.querySelector('#continue-block');
+const continueBtn = document.querySelector('#continue-btn');
 
 saveButton.addEventListener('click', ()=>{
     saveBlock.style.visibility = 'visible';  
 })
+continueBtn.addEventListener('click', ()=>{
+    continueBlock.style.visibility = 'visible';
+})
+
 
 function storesBoard(board){ 
     let saveId = document.querySelector('#saveId').value; 
@@ -21,19 +26,13 @@ class saveAndContinue{
     boardMapper(parsedBoard){
         let positionsOfX = [];
         let positionsOfO = []; 
-        let elementO = 'O'; 
-        let element = 'X'; 
-        let idx = parsedBoard.indexOf(element); 
-        let idxO = parsedBoard.indexOf(elementO); 
-        //get the positions of x 
-        while (idx !== -1) {
-            positionsOfX.push(idx); 
-            idx = parsedBoard.indexOf(element, idx + 1); 
-        }
-        //get the positions of o 
-        while (idx !== -1){
-            positionsOfO.push(idxO); 
-            idx = parsedBoard.indexOf(elementO, idxO + 1);
+        for (let i=0; i<parsedBoard.length; i++){
+            if (parsedBoard[i]==='X'){
+                positionsOfX.push(i); 
+            }
+            if (parsedBoard[i]==='O'){
+                positionsOfO.push(i); 
+            }
         }
         return [positionsOfX,positionsOfO]; 
     }
@@ -64,8 +63,9 @@ class saveAndContinue{
     }
     continueSequence(){
         continueBlock.style.visibility = 'visible'; 
-        let id = continueBlock.value; 
-        let retrievedBoard = this.retrievesBoard(id); 
+        const continueId = document.querySelector('#continueId').value;
+        let retrievedBoard = this.retrievesBoard(continueId); 
+        console.log(retrievedBoard)
         let boardmap = this.boardMapper(retrievedBoard);
         this.usePositions(boardmap[0],boardmap[1]);
     }
