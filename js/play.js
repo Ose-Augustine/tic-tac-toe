@@ -1,10 +1,22 @@
-//Controller stores the players and makes it available 
-//to the umpire 
-//Controller would be the only link between umpire and registry
-//and can call on them to function
-//Controller is my brain (lol)! 
-let displayPanel = document.querySelector('.display-box');
-(function Controller(){
-    let umpire  = new Umpire();
-    umpire.gameRunner();
-})();
+
+const continueBtn = document.querySelector('#continue-btn');
+const sendButton = document.querySelector('#save-send');
+
+let umpire = new Umpire(); 
+sendButton.addEventListener('click',()=>{
+    storesBoard(umpire.board); 
+}); 
+continueBtn.addEventListener('click',()=>{
+    let continueAgent = new saveAndContinue(); 
+    continueAgent.continueSequence(); }
+)
+umpire.gameRunner(); 
+
+// (function Controller(){
+//     let umpire  = new Umpire();
+//     umpire.gameRunner();
+//     //display the input field
+//     sendButton.addEventListener('click', storesBoard(umpire.board)); 
+  
+//     });
+// })();
